@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns=http://www.w3.org/1999/xhtml xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://kit.fontawesome.com/279cd13ff5.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        
+        <link rel="stylesheet" th:href="@{/style.css}">
+        <link rel="stylesheet" th:href="@{/responsive.css}">
+    </head>
+    <body>
+        <header class="main_header_area" th:fragment="header">
+            <div class="top_header_area row m0">
+                <div class="container">
+                    <div class="float-left">
+                        <a href=""><i class="fa fa-phone" style="color:white;"></i> + (1800) 456 7890</a>
+                        <a href=""><i class="fa fa-envelope" style="color:white;"></i> info@bookstore.com</a>
+                    </div>
+                    <div class="float-right">
+                        <ul class="h_social list_style">
+                            <li><a href="#"><i class="fa fa-facebook" ></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" style="color:white;"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus" style="color:white;"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin" style="color:white;"></i></a></li>
+                        </ul>
+                        <ul class="h_search list_style">
+                            <li><a class="popup-with-zoom-anim" href="#test-search"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="main_menu_area">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="index.html">
+                        <img style="height: 79px; width: 177.2px;" src="images/logo-book.png" alt="">
+                        <img style="height: 79px; width: 177.2px;" src="images/logo-book.png" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="my_toggle_menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li><a href="">Home</a></li>
+                                <li><a href="">Our Books</a></li>
+                                <li class="dropdown submenu">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Category</a>
+                                    <ul class="dropdown-menu">
+                                            <li><a href="" style="background-color: white; color: black;">About Us</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="about-us.html">About us</a></li>
+                            </ul>
+                            <ul class="navbar-nav justify-content-end">
+                                <li class="dropdown submenu">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="" style="background-color: white; color: black;">Main shop</a></li>
+                                        <li><a href="" style="background-color: white; color: black;">Cart Page</a></li>
+                                        <li><a href="" style="background-color: white; color: black;">Checkout</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Contact Us</a></li>
+                                <li><a href="">Login</a></li>
+                                <li><a href="">Sign up</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+    </header>
+    </body>
+</html>

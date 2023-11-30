@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Student</title>
+    </head>
+    <body>
+        <div class="row">
+            <h1>Book</h1>
+        </div>    
+        <div th:if="${error}">
+            <h3 style="color: red" th:utext="${error}"></h3>
+        </div>
+        <form th:object="${student}" th:action="@{/student/save/{id}(id=${student.id})}"
+              th:method="${id} < 0 ? POST : PUT">
+            ID: <input type="text" name="id" th:value="${student.id}" required><br /> 
+            Name: <input type="text" name="name" th:value="${student.name}" required><br /> 
+            Date of birth: <input type="text" name="dob" th:value="${student.dob}" required><br />
+            Major <input type="text" name="major" th:value="${student.major}" ><br required/> 
+            Vaccinated: <input type="checkbox" name="vaccinated" th:checked="${student.vaccinated}"><br />
+            <input type="submit" value="Save"><br>            
+        </form>
+        
+    </body>
+</html>

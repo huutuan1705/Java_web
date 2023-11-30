@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Songs</title>
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>List Songs</h1>
+            </div>
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Author</th>
+                        <th>Date</th>
+                        <th>Published</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr th:each="song: ${songs}">
+                        <td th:text="${song.id}"></td>
+                        <td th:text="${song.name}"></td>
+                        <td th:text="${song.author}"></td>
+                        <td th:text="${song.date}"></td>
+                        <td><input type="checkbox" th:checked="${song.published}" onclick="this.checked=!this.checked;"/></td>
+                        <td>
+                            <div>
+                                <a style="display:inline-block" th:href="@{song/{id}(id = ${song.id})}"
+                                   class="btn btn-success">View</a>
+                                <form th:method="Delete" th:action="@{/song/delete/{id}(id=${song.id})}" style="display:inline-block">
+                                    <input type="submit" class="btn btn-danger" 
+                                           onclick="return confirm('Are you sure that delete this item?')" value="DELETE" />
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a th:href="@{song/{id}(id = -1)}"
+               class="btn btn-success col-lg-12">New Phone</a>
+        </div>
+    </body>
+</html>

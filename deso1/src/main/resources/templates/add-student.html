@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Student</title>
+    </head>
+    <body>
+        <h1>
+            Add new Student
+        </h1>
+        <div th:if="${error}">
+            <h3 style="color: red" th:utext="${error}"></h3>
+        </div>
+        <form th:method="POST" th:action="@{save}">
+            ID: <input type="text" name="id" required><br /> 
+            Name: <input type="text" name="name" required><br /> 
+            Date of birth: <input type="text" name="dob" required><br />
+            Major <input type="text" name="major" required><br /> 
+            Vaccinated: <input type="checkbox" name="vaccinated"><br />
+            <input type="submit" value="Save"><br>
+        </form>
+    </body>
+</html>

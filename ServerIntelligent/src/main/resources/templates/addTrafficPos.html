@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns=http://www.w3.org/1999/xhtml xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" th:href="@{/home.css}">
+        <link rel="stylesheet" th:href="@{/manage.css}">
+        <link rel="stylesheet" th:href="@{/sample.css}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" 
+              rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div th:replace="header::header"></div>
+        
+        <div class="main-content">
+            <div th:replace="header::sidebar"></div>
+            
+            <div class="content">
+                <div class="title-content login-name">
+                    <i class="fas fa-tag" style="font-size: 30px; color: #252733; padding: 10px;"></i>
+                    <p style="color: black; font-size: 20px; padding-top: 10px; width: 100%" th:text="'Traffic Light Manage > Manage Sample > ' + ${sample.nameImg} + ' > Position detail'"></p>
+                </div>
+                
+                <div class="Update-add" style="margin-left: 20%">
+                    <form th:action="@{/addTrafficPos/{idSample}(idSample = ${sample.idTrafficSample})}"
+                          th:method="Post" >
+                        <div class="information-label">
+                            <label for="author">Title:</label>
+                            <select class="form-select form-select-lg mb-3" name="title"
+                                    aria-label="Large select example" style="color: black; font-size: 20px; width: 300px; margin-bottom: 0px">
+                                <option th:each="label: ${labels}" th:value="${label.idTrafficLabel}" style="color: black; font-size: 20px" 
+                                        th:text="${label.title}" name="title">
+                                            
+                                </option>
+                                
+                            </select>
+                            <br>
+                        </div>
+                        <div class="information-label">
+                            <label for="author">X Top:</label>
+                            <input type="text" class="form-control" style="font-size: 20px" required
+                                   placeholder="X Top" aria-label="Username" aria-describedby="basic-addon1" name="xtop">
+                            <br>
+                        </div>
+                        <div class="information-label">
+                            <label for="author">Y Top:</label>
+                            <input type="text" class="form-control" style="font-size: 20px" required
+                                   placeholder="Y Top" aria-label="Username" aria-describedby="basic-addon1" name="ytop">
+                            <br>
+                        </div>
+                        <div class="information-label">
+                            <label for="author">X Bot:</label>
+                            <input type="text" class="form-control" style="font-size: 20px" required
+                                   placeholder="X Bot" aria-label="Username" aria-describedby="basic-addon1" name="xbot">
+                            <br>
+                        </div>
+                        <div class="information-label">
+                            <label for="author">Y Bot:</label>
+                            <input type="text" class="form-control" style="font-size: 20px" required
+                                   placeholder="Y Bot" aria-label="Username" aria-describedby="basic-addon1" name="ybot">
+                            <br>
+                        </div>
+                        
+                        <div class="information-label">
+                            <input type="submit" value="ADD NEW LABEL" class="btn btn-success"
+                                   style="width: 200px; margin-left: 10%; margin-top: 2%"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

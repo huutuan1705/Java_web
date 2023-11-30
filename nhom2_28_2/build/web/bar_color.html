@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: linear-gradient(to right, rgb(255, 255, 0), rgb(255, 0, 0));
+        }
+
+        .header {
+            text-align: center;
+            font-size: 70px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(153, 51, 0)
+        }
+
+        .input {
+            text-align: center;
+        }
+
+        .input-element {
+            margin-left: 6px;
+        }
+
+        .color-text {
+            color: rgb(153, 51, 0);
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="header">B A C K G R O U N D <br> G E N E R A T O R</h1>
+    <div class="input">
+        <input id="colorpad1" class="input-element" type="color" value="#ff0000" oninput="reSetColor()">
+        <input id="colorpad2" class="input-element" type="color" value="#ffff00" oninput="reSetColor()">
+        <button class="input-element" onclick="setRandomColor()">Random</button>
+    </div>
+    <h2 style="text-align: center; color: rgb(153, 51, 0); ">THIS IS THE BACKGROUND</h2>
+    <h3 id="show-color" class="color-text">linear-gradient(to right, rgb(255, 255, 0), rgb(255, 0, 0))</h3>
+
+    <script>
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function hexToRgb(hex) {
+            var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            color = 'rgb(' + parseInt(result[1], 16) + ', ' + parseInt(result[2], 16) + ', ' + parseInt(result[3], 16) + ')'
+            return color
+        }
+
+        function reSetColor(){
+            color1 = document.getElementById("colorpad1").value
+            color2 = document.getElementById("colorpad2").value
+
+            document.body.style = `background: linear-gradient(to right, ${color1}, ${color2})`
+            var colorpad1 = document.getElementById("colorpad1").value
+            var colorpad2 = document.getElementById("colorpad2").value
+
+            var s = "linear-gradient(to right, " + hexToRgb(colorpad1) + ", " + hexToRgb(colorpad2) + ')'
+            document.getElementById("show-color").innerHTML = s
+        }
+
+        function setRandomColor() {
+            color1 = getRandomColor()
+            color2 = getRandomColor()
+            document.getElementById("colorpad1").value = color1
+            document.getElementById("colorpad2").value = color2
+
+            document.body.style = `background: linear-gradient(to right, ${color1}, ${color2})`
+
+            var colorpad1 = document.getElementById("colorpad1").value
+            var colorpad2 = document.getElementById("colorpad2").value
+
+            var s = "linear-gradient(to right, " + hexToRgb(colorpad1) + ", " + hexToRgb(colorpad2) + ')'
+            document.getElementById("show-color").innerHTML = s
+        }
+    </script>
+</body>
+
+</html>

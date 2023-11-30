@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Student</title>
+    </head>
+    <body>
+        <div class="row">
+            <h1>Book</h1>
+        </div>    
+        <div th:if="${error}">
+            <h3 style="color: red" th:utext="${error}"></h3>
+        </div>
+        <form th:object="${phone}" th:action="@{/phone/save/{id}(id=${phone.id})}"
+              th:method="${id} < 0 ? POST : PUT">
+            ID: <input type="number" name="id" th:value="${phone.id}" readonly><br /> 
+            Name: <input type="text" name="name" th:value="${phone.name}" required><br /> 
+            Price: <input type="text" name="price" th:value="${phone.price}" required><br />
+            Brand: <input type="text" name="brand" th:value="${phone.brand}" required><br/> 
+            Sold: <input type="checkbox" name="sold" th:checked="${phone.sold}"><br />
+            <input onclick="return confirm('Are you sure that update this item?')" type="submit" value="Save"><br>            
+        </form>
+        
+    </body>
+</html>

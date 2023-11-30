@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Student</title>
+    </head>
+    <body>
+        <div class="row">
+            <h1>Song</h1>
+        </div>    
+        <div th:if="${error}">
+            <h3 style="color: red" th:utext="${error}"></h3>
+        </div>
+        <form th:object="${song}" th:action="@{/song/save/{id}(id=${song.id})}"
+              th:method="${id} < 0 ? POST : PUT">
+            ID: <input type="number" name="id" th:value="${song.id}" readonly><br /> 
+            Name: <input type="text" name="name" th:value="${song.name}" required><br /> 
+            Author: <input type="text" name="author" th:value="${song.author}" required><br />
+            Date: <input type="text" name="date" th:value="${song.date}" required><br/> 
+            Published: <input type="checkbox" name="published" th:checked="${song.published}"><br />
+            <input type="submit" value="Save"><br>            
+        </form>
+        
+    </body>
+</html>

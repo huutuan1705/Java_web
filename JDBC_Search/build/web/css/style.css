@@ -1,0 +1,44 @@
+#wrapper{
+    font-family: arial;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+h3{
+    text-align: left;
+    color: blue;
+}
+ul{
+    list-style: none;
+}
+li{
+    width: 25%;
+    text-align: center;
+    float: left;
+    margin: 25px;
+    border: 2px solid chocolate;
+    border-radius: 20px;
+}
+li img{
+    width: 90%;
+}
+li a{
+    text-decoration: none;
+}
+li:hover{
+    background: bisque;
+}
+p{
+    margin: 5px;
+    color: blue;
+    font-size: 12px;
+}
+.old{
+    text-decoration: line-through;
+    color: red;
+}
+input[type="submit"]{
+    width: 200px;
+    height: 30px;
+    background-color: #F90;
+    border-radius: 10px;
+}

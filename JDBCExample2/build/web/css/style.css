@@ -1,0 +1,60 @@
+#wrapper{
+    font-family: arial;
+    margin-left: 30px;
+    width: 90%;
+}
+.clr {
+    clear:both;
+}
+/*Phan Menu*/
+#menu_tab {
+    width:100%;
+}
+ul.menu {
+    float:left;
+    background: url(../images/background_menu.jpg) repeat-x;
+    display:block;
+    list-style-type:none;
+    font-weight:bold;
+    height: 55px;
+    padding:12px;
+    width: 100%;
+}
+ul.menu li {
+    display:inline;
+    font-size:14px;
+    padding-top: 15px;
+    text-align:center;
+    line-height:30px;
+    color:#E2D9BC;
+}
+ul.menu li a{
+    margin: 10px;
+    padding-left:0px;
+    text-decoration:none;
+    text-align:center;
+    color:#E2D9BC;
+    position:relative;
+}
+ul.menu li a img{
+    float:left;
+    margin-left:10px;
+}
+ul.menu li a:hover{
+    color:#F90;
+}
+ul.menu li a:active{
+    color:#FF0;
+}
+ul.menu li a:focus {
+    color:#96F;
+}
+#content{
+    margin-left: 20px;
+}
+table{
+    border-collapse: collapse;
+}
+td{
+    text-align: center;
+}

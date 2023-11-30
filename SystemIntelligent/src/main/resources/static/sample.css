@@ -1,0 +1,28 @@
+.back{
+    position: absolute;
+    margin-left: 2%;
+    margin-top: 10px;
+}
+
+.detail-sample{
+    display: flex;
+    margin-top: 20px;
+    height: 28%;
+    justify-content: center;
+}
+
+.img-sample{
+    display: block;
+    width: 240px;
+    height: 200px;
+    background: whitesmoke;
+   
+
+}
+
+#productImage{
+    margin-top: 10px;
+    font-size: 17px;
+    padding: 10px 2px;
+
+}

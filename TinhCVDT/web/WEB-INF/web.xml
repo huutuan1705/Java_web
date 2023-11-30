@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>TinhNewServlet</servlet-name>
+        <servlet-class>controller.TinhNewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>tinhNewServlet</servlet-name>
+        <servlet-class>controller.tinhNewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginNewServlet</servlet-name>
+        <servlet-class>controller.LoginNewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TinhNewServlet</servlet-name>
+        <url-pattern>/tinhcvdt</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>tinhNewServlet</servlet-name>
+        <url-pattern>/tinh</url-pattern>
+    </servlet-mapping>
+    
+    <context-param>
+        <param-name>user</param-name>
+        <param-value>namtt</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>pass</param-name>
+        <param-value>678</param-value>
+    </context-param>
+    
+    <servlet-mapping>
+        <servlet-name>LoginNewServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
